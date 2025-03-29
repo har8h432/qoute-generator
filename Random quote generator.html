@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #c3cfe2, #c9e4c5);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #444;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #quoteContainer {
+      margin: 20px 0;
+      font-size: 1.8rem;
+      font-style: italic;
+      color: #555;
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 70%;
+      max-width: 500px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background-color: #89b0ae;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease-in-out, transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #55828b;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Quote Generator</h1>
+  <div id="quoteContainer">Click the button to see a quote!</div>
+  <button id="quoteButton">Generate Quote</button>
+
+  <script>
+    // Array of Short Quotes
+    const quotes = [
+      "Dream big.",
+      "Stay positive.",
+      "Never stop learning.",
+      "Take the leap.",
+      "Be kind.",
+      "Strive for excellence.",
+      "Do your best.",
+      "Keep moving forward.",
+      "Work hard.",
+      "Smile often."
+    ];
+
+    // DOM Elements
+    const quoteContainer = document.getElementById('quoteContainer');
+    const quoteButton = document.getElementById('quoteButton');
+
+    // Function to Generate Random Quote
+    const generateQuote = () => {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteContainer.textContent = quotes[randomIndex];
+    };
+
+    // Add Event Listener to Button
+    quoteButton.addEventListener('click', generateQuote);
+  </script>
+</body>
+</html>
